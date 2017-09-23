@@ -1,0 +1,75 @@
+/* ------------------------------------------------------------------------
+create page in style -----------------------------------------------------
+-------------------------------------------------------------------------*/
+// Use mixin in style -------------------------------------------
+
+.box{
+    color: @yellow;
+    margin: @m-center;
+    max-width: 960px;
+    padding: 0px @p1;
+    background-color: @main-color;
+    .box-sizing();
+
+    .block{
+        .box-shadow(0 0 5px, 30%);
+        .border-radius(10px, 10px, 10px, 10px);
+        margin-bottom: 20px;
+    }
+    
+    p{
+        color: @white;
+        .text-shadow(0px, 2px, 3px, rgba(0, 0, 1, 0.8));
+    }
+}
+
+
+body        { 
+    background: url("@{imageurl}/back-bg.jpg") center center repeat;
+    color:@yellow;
+}
+
+button      {
+    background:@blue;
+    color: @white;
+}
+
+section{    
+    padding: @p1;
+    margin: @m-center;
+    .box-sizing();
+}
+
+a,
+.link {
+  color: @link-color;
+    
+    &:hover {
+      color: @link-color-hover;
+    }
+}
+.bottom-box{
+    .box;
+    display: none;
+}
+
+/* ------------------------------------------------------------------- */
+
+// color box using color code
+ul{
+    overflow: hidden;
+    margin-left: -10px;
+    li{
+        float: left;
+        color: @white;
+        width: 30px;
+        height: 30px;
+        margin-left: 8px;
+        margin-bottom: 8px;
+        color: @black;
+        text-align: center;
+        line-height: 30px;
+        border:1px solid @black;
+        list-style: none;
+    }
+}

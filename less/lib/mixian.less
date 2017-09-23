@@ -1,0 +1,43 @@
+// create mixin in style ----------------------------------------
+.box-shadow(@style, @c) when (iscolor(@c)){
+    -webkit-box-shadow: @style @c;
+    box-shadow: @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)){
+    .box-shadow(@style, rgba(0,0,0, @alpha));
+}
+
+//Text Shadow
+.text-shadow (@x: 0, @y: 0, @blur: 5px, @color: #000) {
+    text-shadow: @arguments;
+}
+.opacity(@opacity){
+    opacity: @opacity/100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+.box-sizing(@string: border-box){
+    -webkit-box-sizing: @string;
+       -moz-box-sizing: @string;
+            box-sizing: @string;
+}
+.border-radius(@redius: 5px){
+ -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+         border-radius: @radius;
+}
+.border-radius(@topleft, @topright, @bottomright, @bottomleft){
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+       -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+            border-radius: @topleft @topright @bottomright @bottomleft;
+  
+    
+        -moz-background-clip: padding; 
+	 -webkit-background-clip: padding-box; 
+	         background-clip: padding-box;
+}
+
+.transform(@string){
+    -webkit-transform: @string;
+    -o-transform: @string;
+    transform: @string;
+}
